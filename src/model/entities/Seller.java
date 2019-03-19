@@ -6,17 +6,20 @@ import java.util.Date;
 public class Seller implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	private Integer Id;
+
+	private Integer id;
 	private String name;
 	private String email;
 	private Date birthDate;
 	private Double baseSalary;
-	
+
 	private Department department;
 
+	public Seller() {
+	}
+
 	public Seller(Integer id, String name, String email, Date birthDate, Double baseSalary, Department department) {
-		Id = id;
+		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.birthDate = birthDate;
@@ -25,11 +28,11 @@ public class Seller implements Serializable {
 	}
 
 	public Integer getId() {
-		return Id;
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		this.id = id;
 	}
 
 	public String getName() {
@@ -76,7 +79,7 @@ public class Seller implements Serializable {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Id == null) ? 0 : Id.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -89,19 +92,18 @@ public class Seller implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Seller other = (Seller) obj;
-		if (Id == null) {
-			if (other.Id != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!Id.equals(other.Id))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Seller [Id=" + Id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
+		return "Seller [id=" + id + ", name=" + name + ", email=" + email + ", birthDate=" + birthDate + ", baseSalary="
 				+ baseSalary + ", department=" + department + "]";
 	}
-	
-	
+
 }
